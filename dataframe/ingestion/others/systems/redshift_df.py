@@ -39,7 +39,7 @@ if __name__ == '__main__':
     txnDf = spark.read\
         .format("io.github.spark_redshift_community.spark.redshift")\
         .option("url", jdbcUrl) \
-        .option("query", app_conf["redshift_conf"]["query"]) \
+        .option("dbtable", app_conf["redshift_conf"]["dbtable"]) \
         .option("forward_spark_s3_credentials", "true")\
         .option("tempdir", "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/temp")\
         .load()

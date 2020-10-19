@@ -36,7 +36,7 @@ if __name__ == '__main__':
                   "password": app_secret["mysql_conf"]["password"]
                   }
     # print(jdbcParams)
-
+    
     # use the ** operator/un-packer to treat a python dictionary as **kwargs
     print("\nReading data from MySQL DB using SparkSession.read.format(),")
     txnDF = spark\
