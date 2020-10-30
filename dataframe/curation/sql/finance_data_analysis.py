@@ -37,7 +37,7 @@ if __name__ == '__main__':
     finance_df.show(5, False)
     finance_df.createOrReplaceTempView("finances")
 
-    spark.sql("select * from finances order by amount").show(5, False)
+    spark.sql("select * from finances order by amount desc").show(5, False)
 
     spark.sql("select concat_ws(' - ', AccountNumber, Description) as AccountDetails from finances").show(5, False)
 
